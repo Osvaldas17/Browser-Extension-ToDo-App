@@ -14,17 +14,17 @@ let projectName = document.querySelector('#project-name')
 let deadline = document.querySelector('#deadline')
 let notes = document.querySelector('#notes')
 let description = document.querySelector('#description')
-let AppBackGround = ''
+let appBackGround = ''
 
 let mustDoArr = []
 let toDoArr = []
 let doLatterArr = []
 
-let data = JSON.parse(localStorage.getItem('mustDoArr'))
-let data1 = JSON.parse(localStorage.getItem('toDoArr'))
-let data2 = JSON.parse(localStorage.getItem('doLatterArr'))
-let data3 = JSON.parse(localStorage.getItem('projectObj'))
-let backgroundData = JSON.parse(localStorage.getItem('bg'))
+let data = localStorage.getItem('mustDoArr') ? JSON.parse(localStorage.getItem('mustDoArr')) : []
+let data1 = localStorage.getItem('toDoArr') ? JSON.parse(localStorage.getItem('toDoArr')) : []
+let data2 = localStorage.getItem('doLatterArr') ? JSON.parse(localStorage.getItem('doLatterArr')) : []
+let data3 = localStorage.getItem('projectObj') ? JSON.parse(localStorage.getItem('projectObj')) : []
+let backgroundData = localStorage.getItem('bg') ? JSON.parse(localStorage.getItem('bg')) : 'bg-1'
 
 const mustDoCount = document.querySelector('#mustDo-count')
 const toDoCount = document.querySelector('#toDo-count')
@@ -42,23 +42,24 @@ function getKeyForStorage(arr) {
     (arr === mustDoArr) ? (gotKey = 'mustDoArr') : (arr === toDoArr) ? (gotKey = 'toDoArr') : (gotKey = 'doLatterArr')
     return gotKey
 }
+
 function storeData(key,arr) {
     localStorage.setItem(key,JSON.stringify(arr))
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    (data) ? (mustDoArr = [...data]) : false;
-    (data1) ? (toDoArr = [...data1]) : false;
-    (data2) ? (doLatterArr = [...data2]) : false;
-    (data3) ? (projectObj = [...data3]) : false;
-    (backgroundData) ? (AppBackGround = backgroundData) : false;
+    if (data) {mustDoArr = [...data]}
+    if (data1) {toDoArr = [...data1]}
+    if (data2) {doLatterArr = [...data2]}
+    if (data3) {projectObj = [...data3]}
+    if (backgroundData) {appBackGround = backgroundData}
     currentBg()
     render(mustDoArr)
 });
 
-function changeClassOnItem(y ,x) {
-    y.className = ''
-    y.classList.add(x)
+function changeClassOnItem(element ,classToAdd) {
+    element.className = ''
+    element.classList.add(classToAdd)
 }
 
 document.querySelector('#clear-all').addEventListener('click',() => {
@@ -74,20 +75,20 @@ document.querySelector('#clear-all').addEventListener('click',() => {
 })
 
 function currentBg() {
-    (AppBackGround === 'first') ? (changeClassOnItem(body,'bg-1')) : (AppBackGround === 'second') ? (changeClassOnItem(body,'bg-2')) : (changeClassOnItem(body,'bg-3'))
-    storeData('bg',AppBackGround)
+    (appBackGround === 'first') ? (changeClassOnItem(body,'bg-1')) : (appBackGround === 'second') ? (changeClassOnItem(body,'bg-2')) : (changeClassOnItem(body,'bg-3'))
+    storeData('bg',appBackGround)
 }
 
 document.querySelector('.side-bar-4').addEventListener('click',() => {
-    AppBackGround = 'first'
+    appBackGround = 'first'
     currentBg()
 })
 document.querySelector('.side-bar-5').addEventListener('click',() => {
-    AppBackGround = 'second'
+    appBackGround = 'second'
     currentBg()
 })
 document.querySelector('.side-bar-6').addEventListener('click',() => {
-    AppBackGround = 'third'
+    appBackGround = 'third'
     currentBg()
 })
 
@@ -253,7 +254,7 @@ function render(arr) {
     document.querySelector('#arrow-con').innerHTML = null
     createBottomArrows(arr)
     document.querySelector('#list-items-wrapper').innerHTML = null
-    document.querySelector('#to-do-input').addEventListener('keyup',(e) => {
+    document.querySelector('#to-do-input').addEventListener('input',(e) => {
         if (e.keyCode === 13) {
             render(mustDoArr)
         }

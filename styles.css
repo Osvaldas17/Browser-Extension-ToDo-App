@@ -66,7 +66,7 @@ header {
 .side-star {
     transition: 0.2s ease-in-out;
     background-color: white;
-    opacity: 0.7;
+    opacity: 0.9;
     border-radius: 0 7px 7px 0;
     padding: 8px 7px 8px 5px;
     cursor: pointer;
@@ -92,26 +92,26 @@ header {
 }
 .side-bar-arrows {
     position: absolute;
-    font-size: 30px;
+    font-size: 35px;
     bottom: 12%;
     left: 3%;
 }
 .fa-chevron-up ,.fa-chevron-down {
-    color: rgb(248,249,250);
+    color: black;
 }
 .fa-chevron-down:hover ,.fa-chevron-up:hover {
     cursor: pointer;
     transform: scale(1.2);
-    color: rgb(221,221,221);
+    color: rgb(153, 153, 153);
 }
 .list-con {
     background-color: white;
     width: 75%;
     height: 380px;
-    margin: 5px 0 10px 0;
+    margin: 0 0 10px 0;
     font-size: 20px;
     list-style: none;
-    opacity: 0.8;
+    opacity: 0.9;
     overflow: auto;
 }
 .list-con label {
@@ -164,6 +164,7 @@ header {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+    color: rgb(254,232,109);
 }
 #clear-all:hover {
     transform: scale(1.1);
@@ -187,22 +188,22 @@ input[type=checkbox] {
     transform: scale(1.1) translateX(4px);
 }
 .projects-text {
+    display: flex;
+    align-items: center;
     transition: 0.2s ease-in-out;
-    font-size: 18px;
-    padding: 5px 15px;
+    font-size: 14px;
+    padding: 5px 10px;
     background-color: white;
-    margin: 0 10px;
+    margin: 0 2px;
+    opacity: 0.9;
+    border-radius: 5px 5px 0 0;
 }
 #projects-div {
     display: flex;
-    position: absolute;
-    right: -125px;
-    bottom: 30%;
-    transform: rotate(90deg);
 }
 .projects-text:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    color: #fccb50;
 }
 
 .project-con label,.project-input,textarea {
@@ -289,8 +290,9 @@ input[type=checkbox] {
 
 .sort-btn {
     background-color: white;
-    padding: 5px 10px;
+    padding: 5px 8px;
     cursor: pointer;
+    opacity: 0.9;
 }
 .sort-btn:hover {
     background-color: rgb(221,221,221);
@@ -336,13 +338,13 @@ input[type=checkbox] {
     margin: 5px;
 }
 .bg-1 {
-    background-image: url("https://images.unsplash.com/photo-1530177150700-84cd9a3b059b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+    background-image: url("https://images.unsplash.com/photo-1542924597-e73e0e35c010?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=621&q=80");
 }
 .bg-2 {
     background-image: url("https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80");
 }
 .bg-3 {
-    background-image: url("https://images.unsplash.com/photo-1483959651481-dc75b89291f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=601&q=80");
+    background-image: url("https://images.unsplash.com/photo-1520698857293-5d763dde010f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
 }
 .display-none {
     display: none;
