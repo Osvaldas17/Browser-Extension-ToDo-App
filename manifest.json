@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "JS-todo-extension",
+  "version": "1.0",
+  "description": "Todo app extension",
+  "icons": {
+    "16": "./icon-16px.png",
+    "24": "./icon-24px.png",
+    "32": "./icon-32px.png",
+    "64": "./icon-64px.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./app.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Todo-app-test"
+  }
+}

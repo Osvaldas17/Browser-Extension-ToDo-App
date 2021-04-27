@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+<body class="bg-3">
+<header>
+    <h1>Stuff tO dOO</h1>
+</header>
+<main>
+    <div id="projects-div">
+        <p id="enter-project" class="projects-text">Enter Project</p>
+        <p id="all-projects" class="projects-text">Projects</p>
+    </div>
+    <div class="side-bar">
+        <div id="side-bar-1" class="side-bar-1">
+            <i class="fas fa-star gold side-star hv-1"></i>
+        </div>
+        <div id="side-bar-2" class="side-bar-2">
+            <i class="fas fa-star green side-star hv-2"></i>
+        </div>
+        <div id="side-bar-3" class="side-bar-3">
+            <i class="fas fa-star blue side-star hv-3"></i>
+        </div>
+    </div>
+    <div id="arrow-con" class="side-bar-arrows d-flex flex-center align-center flex-column">
+    </div>
+    <div class="side-bar-right-styles">
+        <div id="side-bar-4" class="side-bar-4">
+            <i class="fas fa-image"></i>
+        </div>
+        <div id="side-bar-5" class="side-bar-5">
+            <i class="fas fa-image"></i>
+        </div>
+        <div id="side-bar-6" class="side-bar-6">
+            <i class="fas fa-image"></i>
+        </div>
+    </div>
+    <div class="middle-con d-flex flex-center flex-column align-center">
+        <div class="input-con">
+            <input id="to-do-input" placeholder="Enter task" type="text">
+        </div>
+        <div class="icon-btn-con d-flex">
+            <div id="must-do" class="d-flex align-center">
+                <i class="fas fa-star star gold"></i>
+                <p id="mustDo-count" class="count gold">0</p>
+            </div>
+            <div id="to-do" class="d-flex align-center">
+                <i class="fas fa-star star green"></i>
+                <p id="toDo-count" class="count green">0</p>
+            </div>
+            <div id="do-latter" class="d-flex align-center">
+                <i class="fas fa-star star blue"></i>
+                <p id="doLatter-count" class="count blue">0</p>
+            </div>
+        </div>
+        <div class="middle-nav space-between d-flex">
+            <div id="sort-con" class="d-flex align-center flex-center">
+                <div id="sort-button" class="sort-btn">Sort</div>
+                <div id="sort-hidden" class="d-flex sort-items">
+                </div>
+            </div>
+            <div id="clear-all" class="d-flex align-center flex-center">
+                <p class="p">Clear all</p>
+                <i class="fas fa-calendar-times"></i>
+            </div>
+        </div>
+        <div id="list-con" class="list-con">
+            <div id="current-page" class="gold">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div id="list-items-wrapper">
+            </div>
+        </div>
+        <div id="project-con" class="list-con project-con">
+            <div id="fillAllFields" class="fillAllFields"></div>
+            <label for="project-name">Project name:</label>
+            <input id="project-name" class="project-input" type="text">
+            <label for="deadline">Deadline:</label>
+            <input id="deadline" class="project-input" type="date">
+            <label for="notes">Notes:</label>
+            <input id="notes" class="project-input" type="text">
+            <label for="description">Description:</label>
+            <textarea id="description" class="project-input" cols="30" rows="10"></textarea>
+            <button id="submit-project" class="submit-project">Submit project</button>
+        </div>
+        <div id="project-list-con" class="list-con project-list">
+            <div class="search-sub">
+                <input id="searchInput" type="text" placeholder="Search by name">
+            </div>
+            <div id="project-list">
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>
