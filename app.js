@@ -38,8 +38,18 @@ function updateNumbers(count,arr) {
 
 /* GET KEY FOR STORAGE SO I COULD UPDATE SPECIFIC LOCAL STORAGE ARRAY ON RE-RENDER */
 let gotKey = ''
+
 function getKeyForStorage(arr) {
-    (arr === mustDoArr) ? (gotKey = 'mustDoArr') : (arr === toDoArr) ? (gotKey = 'toDoArr') : (gotKey = 'doLatterArr')
+    switch (arr) {
+        case mustDoArr:
+            gotKey = 'mustDoArr'
+            break
+        case toDoArr:
+            gotKey = 'toDoArr'
+            break
+        case doLatterArr:
+            gotKey = 'doLatterArr'
+    }
     return gotKey
 }
 
