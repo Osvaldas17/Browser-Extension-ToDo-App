@@ -9,16 +9,7 @@
     "32": "./icon-32px.png",
     "64": "./icon-64px.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "./app.js"
-      ]
-    }
-  ],
+
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "Todo-app-test"

@@ -30,27 +30,25 @@ const mustDoCount = document.querySelector('#mustDo-count')
 const toDoCount = document.querySelector('#toDo-count')
 const doLatterCount = document.querySelector('#doLatter-count')
 
-mustDoCount.textContent = mustDoArr.length.toString()
 
 function updateNumbers(count,arr) {
     count.textContent = arr.length.toString()
 }
 
 /* GET KEY FOR STORAGE SO I COULD UPDATE SPECIFIC LOCAL STORAGE ARRAY ON RE-RENDER */
-let gotKey = ''
 
 function getKeyForStorage(arr) {
     switch (arr) {
-        case mustDoArr:
-            gotKey = 'mustDoArr'
-            break
-        case toDoArr:
-            gotKey = 'toDoArr'
-            break
-        case doLatterArr:
-            gotKey = 'doLatterArr'
+        case
+        mustDoArr:
+            return 'mustDoArr';
+        case
+        toDoArr:
+            return 'toDoArr';
+        case
+        doLatterArr:
+            return 'doLatterArr'
     }
-    return gotKey
 }
 
 function storeData(key,arr) {
@@ -225,7 +223,7 @@ function createEl(element,arr) {
     checkBox.addEventListener('click', () => {
         colorOnCheckClick(arr, text)
         element.done = checkBox.checked;
-        storeData(gotKey,arr)
+        storeData(getKeyForStorage(arr),arr)
     })
     const arrow = document.createElement('i')
     arrow.className = 'fas fa-angle-double-right'
@@ -243,7 +241,7 @@ function createEl(element,arr) {
     bin.addEventListener('click', () => {
         delItem(element, arr, div)
         getKeyForStorage(arr)
-        storeData(gotKey, arr)
+        storeData(getKeyForStorage(arr), arr)
         updateNumbers(mustDoCount, mustDoArr)
         updateNumbers(toDoCount, toDoArr)
         updateNumbers(doLatterCount, doLatterArr)
@@ -279,7 +277,7 @@ function render(arr) {
     updateNumbers(toDoCount,toDoArr)
     updateNumbers(doLatterCount,doLatterArr)
     getKeyForStorage(arr)
-    storeData(gotKey,arr)
+    storeData(getKeyForStorage(arr),arr)
 }
 
 function createBottomArrows(arr) {
