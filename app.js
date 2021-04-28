@@ -264,7 +264,7 @@ function render(arr) {
     document.querySelector('#arrow-con').innerHTML = null
     createBottomArrows(arr)
     document.querySelector('#list-items-wrapper').innerHTML = null
-    document.querySelector('#to-do-input').addEventListener('input',(e) => {
+    document.querySelector('#to-do-input').addEventListener('keyup',(e) => {
         if (e.keyCode === 13) {
             render(mustDoArr)
         }
@@ -310,7 +310,7 @@ function createBottomArrows(arr) {
 let projectObj = []
 let searchObj = []
 
-searchInput.addEventListener('keyup',(el) => {
+searchInput.addEventListener('input',(el) => {
     const searchValue = el.target.value.toLowerCase()
     searchObj = projectObj.filter(e => {
         return e.name.toLowerCase().includes(searchValue)
